@@ -1,0 +1,57 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<!--
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Store {{store.name}}</h1>
+  </div>
+</header>
+-->
+  <div class="container">
+    <div class="col-lg-6">
+    <h1>Store {{store.name}}</h1>
+    </div>
+    <div class="col-lg-1 thumbnail">
+      <img src="{{store.mainImage}}" class="thumbnail" />
+    </div>
+    <div class="col-lg-5">
+    <h4>Store {{store.info}}</h4>
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    
+ <div class="col-sm-6 col-md-3 list-group-item active" ng-repeat="pr in products">
+        <h4>{{pr.name}}</h4>
+         {{pr.info}}
+      
+      <a href="#" class=" thumbnail">
+
+         <img src="http://play.bluefm.com.ar/files/2012/07/completa-acme.gif" 
+         alt="Generic placeholder thumbnail">
+      </a>
+   </div>
+
+    </div>
+  </div>
+
+  <form class="thing-form">
+    <label>Search</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Name" ng-model="newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="">Search</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Vidrieloca v2.1.0 |
+        <a href="https://twitter.com/vidrieloca">@vidrieloca</a> |
+         
+  </div>
+</footer>

@@ -1,0 +1,51 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Stores</h1>
+    <p class="lead">Stores in the system</p>
+    <a ui-sref="admin">Admin</a> asdad
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    
+ <div class="col-sm-6 col-md-3" ng-repeat="st in stores">
+      
+
+
+      <a ui-sref="store({ storeId: st._id })" class=" thumbnail">
+<!--
+      <a href="./store/{{st._id}}" class=" thumbnail">
+      -->
+        <h4>{{st.name}}</h4>
+         {{st.info}}
+
+         <img src="{{st.mainImage}}" 
+         alt="Generic placeholder thumbnail">
+      </a>
+   </div>
+
+    </div>
+  </div>
+
+  <form class="thing-form">
+    <label>Search</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Store Name" ng-model="newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="">Search</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Vidrieloca v2.1.0 |
+        <a href="https://twitter.com/vidrieloca">@vidrieloca</a> |
+         
+  </div>
+</footer>

@@ -1,0 +1,100 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div class="container">
+  <div class="row">
+      <h1 class="page-header">Store {{store.name}}</h1>
+    <div class="col-lg-6">
+    
+      <h4>{{store.info}}</h4>
+
+      <div class="col-lg-6 thumbnail">
+         <img src="{{store.mainImage}}"  alt="Store logo" class="thumbnail">
+      </div>
+
+    </div>
+
+<div class="col-lg-6" ng-show="store!=null">
+        <div class="row" >
+          <label>Name</label>
+          <p class="input-group">
+            <input type="text" class="form-control" placeholder="Store name" ng-model="store.name">
+           </p>
+          <label>information</label> 
+           <p class="input-group">
+            <input type="text" class="form-control" placeholder="Store info" ng-model="store.info">
+           </p>
+
+
+          <label>Image</label> 
+           <p class="input-group">
+            <input type="text" class="form-control" placeholder="Main image" ng-model="store.mainImage">
+           </p>
+
+          <label>id</label> 
+           <p class="input-group">
+          {{store._id}}
+            </p> 
+
+
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary" ng-click="saveStore()">Save Store</button>
+              
+            </span>
+
+
+      </div>
+    </div>
+</div>
+
+  <div class="row">
+    
+    <div class="col-lg-6">
+      <h2>Products</h2>
+      <div class="list-group">
+        <a href="#" class="list-group-item" ng-repeat="pr in products" ng-click="selectProduct(pr)">
+          <h4 class="list-group-item-heading">{{pr.name}}</h4>
+          <p class="list-group-item-text">{{pr.info}}</p>
+        </a>
+      </div>
+      <button type="submit" class="btn btn-primary" ng-click="showNewProduct()">New Product</button>
+    </div>
+
+    <div class="col-lg-6">
+<div class="row" ng-show="product!=null">
+  <form class="thing-form">
+    <label>Product Name</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Store name" ng-model="product.name">
+     </p>
+    <label>Store information</label> 
+     <p class="input-group">
+      <input type="text" class="form-control" placeholder="Store info" ng-model="product.info">
+     </p>
+
+
+    <label>id</label> 
+     <p class="input-group">
+    {{product._id}}
+      </p> 
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="saveProduct()">Save</button>
+        <button type="submit" class="btn btn-primary" ng-click="deleteProduct()">Delete</button>
+        <button type="submit" class="btn btn-primary" ng-click="cancelProduct()">Cancel</button>
+      </span>
+    </p>
+    
+  </form>
+</div>
+
+
+    </div>
+      
+
+
+    </div>
+  </div>
+
+
+
+</div>
